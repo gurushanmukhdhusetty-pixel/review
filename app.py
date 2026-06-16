@@ -168,8 +168,7 @@ with st.sidebar:
         st.session_state.staged_df = generate_mock_data()
         st.toast("Corporate sample data loaded successfully!", icon="📥")
         
-    if st.button("Reset Global App Memory State", use_container_width=True, type="negative"):
-        st.session_state.analyzed_data = None
+if st.button("Reset Global App Memory State", use_container_width=True, type="primary", icon="🗑️"):        st.session_state.analyzed_data = None
         if "staged_df" in st.session_state:
             del st.session_state.staged_df
         st.rerun()
