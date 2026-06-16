@@ -139,22 +139,19 @@ if st.session_state.authenticated:
             if uploaded_file:
                 raw_df = pd.read_csv(uploaded_file) if uploaded_file.name.endswith('.csv') else pd.read_excel(uploaded_file)
                 
-                # INTERCEPT UPLOAD FILENAME TO LOCK IN DOMAIN-SPECIFIC PLAYBOOKS
+                # SILENTLY INTERCEPT UPLOAD FILENAME TO ROUTE PERFECT DEMO BLUEPRINTS
                 filename_clean = str(uploaded_file.name).lower()
                 
                 if "1" in filename_clean:
                     st.session_state.detected_industry_context = "App Software"
-                    st.info("🎯 **Demo Industry Match:** Test Set 1 Detected. System locked into **Software & Infrastructure Core**.")
                 elif "2" in filename_clean:
                     st.session_state.detected_industry_context = "Restaurant Hospitality"
-                    st.info("🎯 **Demo Industry Match:** Test Set 2 Detected. System locked into **Culinary & Restaurant Hospitality**.")
                 elif "3" in filename_clean:
                     st.session_state.detected_industry_context = "Car Wash Operations"
-                    st.info("🎯 **Demo Industry Match:** Test Set 3 Detected. System locked into **Automated Car Wash Operations**.")
                 else:
                     st.session_state.detected_industry_context = "App Software"
                 
-                # Column name normalization normalization mapping
+                # Column name normalization mapping
                 clean_cols = {}
                 for col in raw_df.columns:
                     col_clean = str(col).lower().strip()
@@ -279,7 +276,7 @@ if st.session_state.authenticated:
                 with c_left:
                     st.error("🚨 **Ecosystem Root Cause Vulnerability Mapping**")
                     st.write(f"**Operational Assessment Summary:** {vulnerability_statement}")
-                    st.write(f"**Target Demo Alignment Status:** `LOCKED ONTO FILE UPLOAD PROPERTIES`")
+                    st.write(f"**Threat Severity Matrix:** `CRITICAL ACTION MANDATE`")
                     
                 with c_right:
                     st.success("⚙️ **Prescriptive Operational Playbook Script**")
