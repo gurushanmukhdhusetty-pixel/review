@@ -60,6 +60,7 @@ LEXICON = {
     "hate": -0.8, "frustrated": -0.7, "confusing": -0.5, "messy": -0.5, "expensive": -0.4
 }
 
+# Key phrases mapped cleanly to traditional SERVQUAL categories
 SERVQUAL_MAP = {
     "Reliability": ["crash", "bug", "error", "fail", "freeze", "broken", "glitch", "downtime", "log", "loss", "load"],
     "Responsiveness": ["slow", "wait", "delay", "time", "hour", "respond", "speed", "latency", "queue", "pending"],
@@ -168,7 +169,8 @@ with st.sidebar:
         st.session_state.staged_df = generate_mock_data()
         st.toast("Corporate sample data loaded successfully!", icon="📥")
         
-if st.button("Reset Global App Memory State", use_container_width=True, type="primary", icon="🗑️"):        st.session_state.analyzed_data = None
+    if st.button("Reset Global App Memory State", use_container_width=True, type="primary", icon="🗑️"):
+        st.session_state.analyzed_data = None
         if "staged_df" in st.session_state:
             del st.session_state.staged_df
         st.rerun()
