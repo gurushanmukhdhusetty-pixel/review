@@ -183,7 +183,6 @@ if st.session_state.authenticated:
                 out_df = process_dataframe(active_df, target_text_col)
                 st.session_state.analyzed_data = out_df
                 st.session_state.text_column_ref = target_text_col
-                st.balloons()
                 st.success("Analysis complete. Proceed to the 'Strategic Dashboard' tab.")
 
     # --- TAB 2: STRATEGIC DASHBOARD ---
